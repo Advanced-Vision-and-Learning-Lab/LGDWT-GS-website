@@ -191,14 +191,14 @@ header {
 }
 
 .link-btn.arxiv {
-    background-color: #b31b1b;
+    background-color: #ff6b6b;
     color: white;
-    border-color: #b31b1b;
+    border-color: #ff6b6b;
 }
 
 .link-btn.arxiv:hover {
-    background-color: #8b1515;
-    border-color: #8b1515;
+    background-color: #ff5252;
+    border-color: #ff5252;
 }
 
 /* Teaser Image */
