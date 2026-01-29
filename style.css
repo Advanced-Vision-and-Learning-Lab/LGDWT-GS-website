@@ -334,48 +334,46 @@ header {
     background-color: #000;
 }
 
-/* Plant expandable buttons – same style as header link buttons (Paper, Code, Dataset, Lab) */
+/* Plant expandable buttons – full-width bar: text left, chevron right */
 .plant-buttons {
     display: flex;
     flex-direction: column;
     gap: 12px;
     margin: 30px 0;
-    align-items: center;
 }
 
 .plant-btn {
-    display: inline-flex;
-    flex-direction: column;
+    display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 12px 16px;
-    gap: 6px;
-    min-width: 140px;
-    font-weight: 500;
-    color: #333;
-    background-color: #f5f5f5;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 24px;
+    font-size: 1.25em;
+    font-weight: 600;
+    color: #1a1a1a;
+    background: #f5f5f5;
     border: 2px solid #ddd;
-    border-radius: 6px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: all 0.2s;
-    text-align: center;
+    transition: all 0.25s ease;
+    text-align: left;
 }
 
 .plant-btn:hover {
-    background-color: #e8e8e8;
+    background: #eee;
     border-color: #bbb;
-    transform: translateY(-2px);
 }
 
 .plant-btn[aria-expanded="true"] {
-    background-color: #e8f0fe;
+    background: #e8f0fe;
     border-color: #0066cc;
     color: #0066cc;
 }
 
-.plant-btn .plant-btn-icon {
-    font-size: 1.5em;
+.plant-btn-icon {
     transition: transform 0.25s ease;
+    font-size: 0.9em;
+    flex-shrink: 0;
 }
 
 .plant-btn[aria-expanded="true"] .plant-btn-icon {
@@ -383,8 +381,7 @@ header {
 }
 
 .plant-btn-label {
-    font-size: 0.85em;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .plant-expand {
