@@ -190,17 +190,6 @@ header {
     border-color: #5a6268;
 }
 
-.link-btn.arxiv {
-    background-color: #ff6b6b;
-    color: white;
-    border-color: #ff6b6b;
-}
-
-.link-btn.arxiv:hover {
-    background-color: #ff5252;
-    border-color: #ff5252;
-}
-
 /* Teaser Image */
 .teaser {
     text-align: center;
