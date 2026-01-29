@@ -246,9 +246,11 @@
                 btn.addEventListener('click', function() {
                     var plant = this.getAttribute('data-plant');
                     var expand = document.getElementById('expand-' + plant);
+                    if (!expand) return;
                     var isExpanded = this.getAttribute('aria-expanded') === 'true';
                     this.setAttribute('aria-expanded', !isExpanded);
                     expand.hidden = isExpanded;
+                    expand.style.display = isExpanded ? 'none' : 'block';
                 });
             });
         });

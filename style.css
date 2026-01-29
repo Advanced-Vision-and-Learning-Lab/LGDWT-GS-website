@@ -390,13 +390,11 @@ header {
 }
 
 .plant-expand[hidden] {
-    display: block;
-    max-height: 0;
-    opacity: 0;
-    pointer-events: none;
+    display: none !important;
 }
 
 .plant-expand:not([hidden]) {
+    display: block !important;
     max-height: 6000px;
     opacity: 1;
     margin-bottom: 20px;
