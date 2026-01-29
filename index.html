@@ -160,6 +160,64 @@
                     <img src="camra1_slow.gif" alt="Pseudo RGB" class="animated-gif" style="animation-iteration-count: infinite;">
                 </div>
             </div>
+
+            <div class="plant-buttons">
+                <button type="button" class="plant-btn" data-plant="raw-dataset" aria-expanded="false">
+                    <span class="plant-btn-label">Raw dataset images</span>
+                    <i class="fas fa-chevron-down plant-btn-icon"></i>
+                </button>
+                <div class="plant-expand" id="expand-raw-dataset" hidden>
+                    <div class="raw-plant-block">
+                        <h3 class="raw-plant-title">Alocasia</h3>
+                        <div class="spectral-channels four-bands">
+                            <div class="channel-item"><h4>580 nm (Green)</h4><img src="houseplant/images_G/processed_Image_000001__cam1.png" alt="Alocasia Green"></div>
+                            <div class="channel-item"><h4>660 nm (Red)</h4><img src="houseplant/images_R/processed_Image_000001__cam1.png" alt="Alocasia Red"></div>
+                            <div class="channel-item"><h4>735 nm (Red Edge)</h4><img src="houseplant/images_RE/processed_Image_000001__cam1.png" alt="Alocasia Red Edge"></div>
+                            <div class="channel-item"><h4>820 nm (NIR)</h4><img src="houseplant/images_NIR/processed_Image_000001__cam1.png" alt="Alocasia NIR"></div>
+                        </div>
+                    </div>
+
+                    <div class="raw-plant-block">
+                        <h3 class="raw-plant-title">Cotton</h3>
+                        <div class="spectral-channels four-bands">
+                            <div class="channel-item"><h4>580 nm (Green)</h4><img src="greenhouse%20data/cotton_channels/extracted/green/Image_000001__cam1.png" alt="Cotton Green"></div>
+                            <div class="channel-item"><h4>660 nm (Red)</h4><img src="greenhouse%20data/cotton_channels/extracted/red/Image_000001__cam1.png" alt="Cotton Red"></div>
+                            <div class="channel-item"><h4>735 nm (Red Edge)</h4><img src="greenhouse%20data/cotton_channels/extracted/red_edge/Image_000001__cam1.png" alt="Cotton Red Edge"></div>
+                            <div class="channel-item"><h4>820 nm (NIR)</h4><img src="greenhouse%20data/cotton_channels/extracted/NIR/Image_000001__cam1.png" alt="Cotton NIR"></div>
+                        </div>
+                    </div>
+
+                    <div class="raw-plant-block">
+                        <h3 class="raw-plant-title">Grape</h3>
+                        <div class="spectral-channels four-bands">
+                            <div class="channel-item"><h4>580 nm (Green)</h4><img src="greenhouse%20data/grape_channels/extracted/green/Image_000001__cam1%20(1).png" alt="Grape Green"></div>
+                            <div class="channel-item"><h4>660 nm (Red)</h4><img src="greenhouse%20data/grape_channels/extracted/red/Image_000001__cam1%20(1).png" alt="Grape Red"></div>
+                            <div class="channel-item"><h4>735 nm (Red Edge)</h4><img src="greenhouse%20data/grape_channels/extracted/red_edge/Image_000001__cam1%20(1).png" alt="Grape Red Edge"></div>
+                            <div class="channel-item"><h4>820 nm (NIR)</h4><img src="greenhouse%20data/grape_channels/extracted/NIR/Image_000001__cam1%20(1).png" alt="Grape NIR"></div>
+                        </div>
+                    </div>
+
+                    <div class="raw-plant-block">
+                        <h3 class="raw-plant-title">Tomato</h3>
+                        <div class="spectral-channels four-bands">
+                            <div class="channel-item"><h4>580 nm (Green)</h4><img src="greenhouse%20data/tomato_channels/extracted/green/Image_000001__cam1%20(2).png" alt="Tomato Green"></div>
+                            <div class="channel-item"><h4>660 nm (Red)</h4><img src="greenhouse%20data/tomato_channels/extracted/red/Image_000001__cam1%20(2).png" alt="Tomato Red"></div>
+                            <div class="channel-item"><h4>735 nm (Red Edge)</h4><img src="greenhouse%20data/tomato_channels/extracted/red_edge/Image_000001__cam1%20(2).png" alt="Tomato Red Edge"></div>
+                            <div class="channel-item"><h4>820 nm (NIR)</h4><img src="greenhouse%20data/tomato_channels/extracted/NIR/Image_000001__cam1%20(2).png" alt="Tomato NIR"></div>
+                        </div>
+                    </div>
+
+                    <div class="raw-plant-block">
+                        <h3 class="raw-plant-title">Sorghum</h3>
+                        <div class="spectral-channels four-bands">
+                            <div class="channel-item"><h4>580 nm (Green)</h4><img src="greenhouse%20data/Sorghumtif/extracted/Camera1/green/Image_000001.png" alt="Sorghum Green"></div>
+                            <div class="channel-item"><h4>660 nm (Red)</h4><img src="greenhouse%20data/Sorghumtif/extracted/Camera1/red/Image_000001.png" alt="Sorghum Red"></div>
+                            <div class="channel-item"><h4>735 nm (Red Edge)</h4><img src="greenhouse%20data/Sorghumtif/extracted/Camera1/red_edge/Image_000001.png" alt="Sorghum Red Edge"></div>
+                            <div class="channel-item"><h4>820 nm (NIR)</h4><img src="greenhouse%20data/Sorghumtif/extracted/Camera1/NIR/Image_000001.png" alt="Sorghum NIR"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Citation -->
@@ -182,5 +240,18 @@
         </section>
     </div>
     <script src="slider.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.plant-btn').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var plant = this.getAttribute('data-plant');
+                    var expand = document.getElementById('expand-' + plant);
+                    var isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    expand.hidden = isExpanded;
+                });
+            });
+        });
+    </script>
 </body>
 </html>
